@@ -1,0 +1,239 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2C452BEF-2777-4A47-B612-B274945BC73C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Proiect_1_Game</RootNamespace>
+    <AssemblyName>Proiect_1_Game</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Classes\GameBoard.cs" />
+    <Compile Include="Classes\Tile.cs" />
+    <Compile Include="CreateUserWindow.xaml.cs">
+      <DependentUpon>CreateUserWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\ImageStorage.cs" />
+    <Compile Include="Classes\ObjectToSerialize.cs" />
+    <Compile Include="Classes\SerializationActions.cs" />
+    <Compile Include="Classes\User.cs" />
+    <Page Include="CreateUserWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Game.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GameSelection.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Game.xaml.cs">
+      <DependentUpon>Game.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GameSelection.xaml.cs">
+      <DependentUpon>GameSelection.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\ProfilePics\Fanica.jpg" />
+    <Resource Include="images\ProfilePics\tree.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\ProfilePics\4doresmorehoes.jpg" />
+    <Resource Include="images\ProfilePics\Coco.jpg" />
+    <Resource Include="images\ProfilePics\CosticaFulger.jpg" />
+    <Resource Include="images\ProfilePics\GicuLicuricu.jpg" />
+    <Resource Include="images\ProfilePics\Gigel.jpg" />
+    <Resource Include="images\ProfilePics\IonutDiamantu.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\TilePics\DefaultBack.jpg" />
+    <Resource Include="images\TilePics\img %281%29.jpg" />
+    <Resource Include="images\TilePics\img %2810%29.jpg" />
+    <Resource Include="images\TilePics\img %2811%29.jpg" />
+    <Resource Include="images\TilePics\img %2812%29.jpg" />
+    <Resource Include="images\TilePics\img %2813%29.jpg" />
+    <Resource Include="images\TilePics\img %2814%29.jpg" />
+    <Resource Include="images\TilePics\img %2815%29.jpg" />
+    <Resource Include="images\TilePics\img %2816%29.jpg" />
+    <Resource Include="images\TilePics\img %2817%29.jpg" />
+    <Resource Include="images\TilePics\img %2818%29.jpg" />
+    <Resource Include="images\TilePics\img %2819%29.jpg" />
+    <Resource Include="images\TilePics\img %282%29.jpg" />
+    <Resource Include="images\TilePics\img %2820%29.jpg" />
+    <Resource Include="images\TilePics\img %2821%29.jpg" />
+    <Resource Include="images\TilePics\img %2822%29.jpg" />
+    <Resource Include="images\TilePics\img %2823%29.jpg" />
+    <Resource Include="images\TilePics\img %2824%29.jpg" />
+    <Resource Include="images\TilePics\img %2825%29.jpg" />
+    <Resource Include="images\TilePics\img %2826%29.jpg" />
+    <Resource Include="images\TilePics\img %2827%29.jpg" />
+    <Resource Include="images\TilePics\img %2828%29.jpg" />
+    <Resource Include="images\TilePics\img %2829%29.jpg" />
+    <Resource Include="images\TilePics\img %283%29.jpg" />
+    <Resource Include="images\TilePics\img %2830%29.jpg" />
+    <Resource Include="images\TilePics\img %2831%29.jpg" />
+    <Resource Include="images\TilePics\img %2833%29.jpg" />
+    <Resource Include="images\TilePics\img %2834%29.jpg" />
+    <Resource Include="images\TilePics\img %2835%29.jpg" />
+    <Resource Include="images\TilePics\img %2836%29.jpg" />
+    <Resource Include="images\TilePics\img %2837%29.jpg" />
+    <Resource Include="images\TilePics\img %2838%29.jpg" />
+    <Resource Include="images\TilePics\img %2839%29.jpg" />
+    <Resource Include="images\TilePics\img %284%29.jpg" />
+    <Resource Include="images\TilePics\img %2840%29.jpg" />
+    <Resource Include="images\TilePics\img %2841%29.jpg" />
+    <Resource Include="images\TilePics\img %2842%29.jpg" />
+    <Resource Include="images\TilePics\img %2843%29.jpg" />
+    <Resource Include="images\TilePics\img %2844%29.jpg" />
+    <Resource Include="images\TilePics\img %2845%29.jpg" />
+    <Resource Include="images\TilePics\img %2846%29.jpg" />
+    <Resource Include="images\TilePics\img %2847%29.jpg" />
+    <Resource Include="images\TilePics\img %2848%29.jpg" />
+    <Resource Include="images\TilePics\img %2849%29.jpg" />
+    <Resource Include="images\TilePics\img %285%29.jpg" />
+    <Resource Include="images\TilePics\img %2850%29.jpg" />
+    <Resource Include="images\TilePics\img %2851%29.jpg" />
+    <Resource Include="images\TilePics\img %2852%29.jpg" />
+    <Resource Include="images\TilePics\img %2853%29.jpg" />
+    <Resource Include="images\TilePics\img %2854%29.jpg" />
+    <Resource Include="images\TilePics\img %2855%29.jpg" />
+    <Resource Include="images\TilePics\img %2856%29.jpg" />
+    <Resource Include="images\TilePics\img %2857%29.jpg" />
+    <Resource Include="images\TilePics\img %2858%29.jpg" />
+    <Resource Include="images\TilePics\img %2859%29.jpg" />
+    <Resource Include="images\TilePics\img %286%29.jpg" />
+    <Resource Include="images\TilePics\img %2860%29.jpg" />
+    <Resource Include="images\TilePics\img %2861%29.jpg" />
+    <Resource Include="images\TilePics\img %2862%29.jpg" />
+    <Resource Include="images\TilePics\img %2863%29.jpg" />
+    <Resource Include="images\TilePics\img %2864%29.jpg" />
+    <Resource Include="images\TilePics\img %2865%29.jpg" />
+    <Resource Include="images\TilePics\img %2866%29.jpg" />
+    <Resource Include="images\TilePics\img %2867%29.jpg" />
+    <Resource Include="images\TilePics\img %2868%29.jpg" />
+    <Resource Include="images\TilePics\img %2869%29.jpg" />
+    <Resource Include="images\TilePics\img %287%29.jpg" />
+    <Resource Include="images\TilePics\img %2870%29.jpg" />
+    <Resource Include="images\TilePics\img %2871%29.jpg" />
+    <Resource Include="images\TilePics\img %2872%29.jpg" />
+    <Resource Include="images\TilePics\img %2873%29.jpg" />
+    <Resource Include="images\TilePics\img %2874%29.jpg" />
+    <Resource Include="images\TilePics\img %2875%29.jpg" />
+    <Resource Include="images\TilePics\img %2876%29.jpg" />
+    <Resource Include="images\TilePics\img %2877%29.jpg" />
+    <Resource Include="images\TilePics\img %2878%29.jpg" />
+    <Resource Include="images\TilePics\img %2879%29.jpg" />
+    <Resource Include="images\TilePics\img %288%29.jpg" />
+    <Resource Include="images\TilePics\img %2880%29.jpg" />
+    <Resource Include="images\TilePics\img %2881%29.jpg" />
+    <Resource Include="images\TilePics\img %2882%29.jpg" />
+    <Resource Include="images\TilePics\img %2883%29.jpg" />
+    <Resource Include="images\TilePics\img %2884%29.jpg" />
+    <Resource Include="images\TilePics\img %2885%29.jpg" />
+    <Resource Include="images\TilePics\img %2886%29.jpg" />
+    <Resource Include="images\TilePics\img %2887%29.jpg" />
+    <Resource Include="images\TilePics\img %2888%29.jpg" />
+    <Resource Include="images\TilePics\img %2889%29.jpg" />
+    <Resource Include="images\TilePics\img %289%29.jpg" />
+    <Resource Include="images\TilePics\img %2890%29.jpg" />
+    <Resource Include="images\TilePics\img %2891%29.jpg" />
+    <Resource Include="images\TilePics\img %2892%29.jpg" />
+    <Resource Include="images\TilePics\img %2893%29.jpg" />
+    <Resource Include="images\TilePics\img %2894%29.jpg" />
+    <Resource Include="images\TilePics\img %2895%29.jpg" />
+    <Resource Include="images\TilePics\img %2896%29.jpg" />
+    <Resource Include="images\TilePics\img %2897%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\TilePics\img %2832%29.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
